@@ -85,12 +85,7 @@
         font-weight: bold;
       }
       
-      i {
-          color: #1742ff;
-          font-size: 100px;
-          line-height: 200px;
-          margin-left:-15px;
-        }
+     
 
       .close:hover,
       .close:focus {
@@ -131,6 +126,7 @@
 </div>
 
 
+
     <div class="lds-ripple" id="lds-ripple"><div></div><div></div></div>
 
      <!-- ======= Header ======= -->
@@ -153,7 +149,7 @@
             </ul>
           </li>
           <li><a  href="#services"> Our VBL </a></li>
-          <li><a  href="test.html"> Programme </a></li>
+          <li><a  href="programme.html"> Programme </a></li>
           <li><a href="#"> Blog </a></li>
           <li><a  href="contact.html"> Contact </a></li>
   
@@ -214,7 +210,72 @@
 </center>
    
 
+<footer id="footer" class="footer">
 
+  <div class="footer-top">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/logo.png" alt="">
+            <span>Edo B.S</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links mt-3">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4 id="name">Contact Us</h4>
+          <p>
+            A108 Adam Street <br>
+            New York, NY 535022<br>
+            United States <br><br>
+            <strong>Phone:</strong> +1 5589 55488 55<br>
+            <strong>Email:</strong> info@example.com<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="copyright">
+      &copy; 2021 Copyright <strong><span>Edo B.S</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Powered by <a href="https://bootstrapmade.com/">brykiva</a>
+    </div>
+  </div>
+</footer>
 
     
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -268,6 +329,13 @@
 <script src="https://js.paystack.co/v2/inline.js"></script>
 <script src="./assets/js/custom.js"></script>
 <script>
+function testJS(object){
+    let params = JSON.stringify(object);
+        url = `detail.html?info=${params}`;
+        document.location.href = url;
+}
+
+
     const proxyurl = "https://brykiva.herokuapp.com/api/post";
 fetch(proxyurl)
   .then(response => response)
@@ -286,10 +354,11 @@ fetch(proxyurl)
             let a = document.createElement('button')
             let h4 = document.createElement("h4");
             a.onclick = function(){
-                payWithPaystack({amount: e.price, postid: e._id})
+                 testJS(e);
+                // payWithPaystack({amount: e.price, postid: e._id})
             };
             // a.addEventListener("click", payWithPaystack());
-        
+          
             img.src = e.video
              img.style = "width:100%";
 
@@ -302,7 +371,7 @@ fetch(proxyurl)
             a.classList.add("button1");
            
             h4.innerHTML = e.title
-            a.innerText = "Get Course"
+            a.innerText = "View Course"
             // divtest.innerHTML = e.title
             p.innerHTML = e.description
 
