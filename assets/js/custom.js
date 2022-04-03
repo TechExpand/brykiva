@@ -4,7 +4,7 @@ function payWithPaystack(data) {
     paystack.newTransaction({
         key: 'pk_test_5c965cdcf6402965f3d962d93b1b8edd0fbdcdd1',
         email: 'example@email.com',
-        amount: data.amount,
+        amount: Number(data.amount.toString())*Number('100'),
         onSuccess: (transaction) => { 
             confirm(data.postid ,transaction.reference);
             // Payment complete! Reference: transaction.reference 
