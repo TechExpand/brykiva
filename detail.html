@@ -465,9 +465,18 @@ let objpara = JSON.parse(para)
   
 }
 
+
+function testJS(object){
+    let params = JSON.stringify(object);
+        url = `form.html?info=${params}`;
+        document.location.href = url;
+}
+
+
 let a = document.getElementById('button')
             a.onclick = function(){
-                payWithPaystack({amount: objpara2.price, postid: objpara2._id})
+                // payWithPaystack({amount: objpara2.price, postid: objpara2._id})
+                testJS(objpara2.title);
             };
   </script>
 
